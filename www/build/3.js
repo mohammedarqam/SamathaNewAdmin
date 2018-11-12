@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 739:
+/***/ 740:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewVillagesPageModule", function() { return ViewVillagesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddVillagesPageModule", function() { return AddVillagesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_villages__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_villages__ = __webpack_require__(190);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ViewVillagesPageModule = /** @class */ (function () {
-    function ViewVillagesPageModule() {
+var AddVillagesPageModule = /** @class */ (function () {
+    function AddVillagesPageModule() {
     }
-    ViewVillagesPageModule = __decorate([
+    AddVillagesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__view_villages__["a" /* ViewVillagesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__add_villages__["a" /* AddVillagesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__view_villages__["a" /* ViewVillagesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_villages__["a" /* AddVillagesPage */]),
             ],
         })
-    ], ViewVillagesPageModule);
-    return ViewVillagesPageModule;
+    ], AddVillagesPageModule);
+    return AddVillagesPageModule;
 }());
 
-//# sourceMappingURL=view-villages.module.js.map
+//# sourceMappingURL=add-villages.module.js.map
 
 /***/ })
 

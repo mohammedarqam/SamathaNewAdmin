@@ -42,10 +42,10 @@
               <p ion-text item-start color="primary">Schools</p>
               <p item-end>{{assignedJobs.length}}</p>
             </ion-item>
-            <ion-item>
+            <!-- <ion-item>
               <p ion-text item-start color="primary">Students</p>
               <p item-end>20</p>
-            </ion-item>
+            </ion-item> -->
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -55,10 +55,7 @@
           <ion-card-content>
             <ion-card-title color="primary">Current Schools</ion-card-title>
             <ion-item *ngFor="let j of assignedJobs">
-              <p item-start>{{j.SchoolName}} </p>
-              <ion-buttons end>
-                <button ion-button clear (click)="gtSchoolDetails(j)">Details</button>
-              </ion-buttons>
+              <p item-start color="primary" class="curs" (click)="gtSchoolDetails(j)" >{{j.SchoolName}} </p>
             </ion-item>
           </ion-card-content>
         </ion-card>

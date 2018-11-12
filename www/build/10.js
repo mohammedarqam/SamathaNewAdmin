@@ -5,10 +5,10 @@ webpackJsonp([10],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddMandalsPageModule", function() { return AddMandalsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewAmnsPageModule", function() { return ViewAmnsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_mandals__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_amns__ = __webpack_require__(112);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddMandalsPageModule = /** @class */ (function () {
-    function AddMandalsPageModule() {
+var ViewAmnsPageModule = /** @class */ (function () {
+    function ViewAmnsPageModule() {
     }
-    AddMandalsPageModule = __decorate([
+    ViewAmnsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__add_mandals__["a" /* AddMandalsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__view_amns__["a" /* ViewAmnsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_mandals__["a" /* AddMandalsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__view_amns__["a" /* ViewAmnsPage */]),
             ],
         })
-    ], AddMandalsPageModule);
-    return AddMandalsPageModule;
+    ], ViewAmnsPageModule);
+    return ViewAmnsPageModule;
 }());
 
-//# sourceMappingURL=add-mandals.module.js.map
+//# sourceMappingURL=view-amns.module.js.map
 
 /***/ })
 

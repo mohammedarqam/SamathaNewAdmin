@@ -12,7 +12,6 @@
 <ion-content class="darkBg">
 
   <ion-grid class="whiteBg">
-    {{filters | json}}
     <ion-row>
 
       <ion-col col-2>
@@ -227,15 +226,15 @@
         <ion-col col-1 no-padding >
           <p class="headBar">Severity</p>
         </ion-col>
-        <ion-col col-1 no-padding>
-          <p class="headBar">HBl</p>
-        </ion-col>
                 <ion-col col-1 no-padding >
           <p class="headBar">Phone</p>
         </ion-col>
 
         <ion-col col-1 no-padding>
           <p class="headBar">ANM</p>
+        </ion-col>
+        <ion-col col-1 no-padding>
+          <p class="headBar">Actions</p>
         </ion-col>
       </ion-row>
     </ion-navbar>
@@ -288,13 +287,15 @@
             <h2  >{{a.Severity}} </h2><br />
           </ion-col>
           <ion-col col-1 >
-            <h2  >{{a.HBL}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
             <h2  >{{a.Mobile}} </h2><br />
           </ion-col>
           <ion-col col-1 (click)="gtANMDetails(a)" class="curs" >
             <h2  >{{a.ANMName}} </h2><br />
+          </ion-col>
+          <ion-col col-1 >
+            <button ion-button (click)="editStudent(a)" text-center>
+              <ion-icon name="md-create"></ion-icon>
+            </button>
           </ion-col>
 
 

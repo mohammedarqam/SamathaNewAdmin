@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>Edit Student</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+  <ion-row>
+    <ion-col col-6>
+        <ion-card [color]="sevC">
+            <ion-card-content text-center >
+              {{student.Severity}}
+            </ion-card-content>
+          </ion-card>
+      <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label floating>Student Name</ion-label>
+        <ion-input type="text" [(ngModel)]="student.StudentName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Parent Name</ion-label>
+        <ion-input type="text" [(ngModel)]="student.ParentName"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-item>
+          <ion-label floating >Community</ion-label> 
+          <ion-select [(ngModel)]="student.Community" >
+            <ion-option value="SC">SC</ion-option>
+            <ion-option value="ST">ST</ion-option>
+            <ion-option value="BC">BC</ion-option>
+            <ion-option value="OC">OC</ion-option>
+            <ion-option value="Minority">Minority</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+        <ion-item>
+        <ion-label floating>HBL</ion-label>
+        <ion-input type="number" [(ngModel)]="student.HBL" (ionChange)="getSev()" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Age</ion-label>
+        <ion-input type="number" [(ngModel)]="student.Age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Class</ion-label>
+        <ion-input type="number" [(ngModel)]="student.Class"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Mobile</ion-label>
+        <ion-input type="number" [(ngModel)]="student.Mobile"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Height</ion-label>
+        <ion-input type="number" [(ngModel)]="student.Height"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Weight</ion-label>
+        <ion-input type="number" [(ngModel)]="student.Weight"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Aadhar</ion-label>
+        <ion-input type="number" [(ngModel)]="student.Aadhar"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Address</ion-label>
+        <ion-input type="text" [(ngModel)]="student.Address"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+<ion-col col-6>
+    <button float-right ion-button (click)="checkData()">Update</button>
+    <ion-card>
+    <ion-card-content>
+
+
+      <ion-item>
+        <p ion-text item-start color="primary">Mandal</p>
+        <p item-end>{{student.MandalName}}</p>
+      </ion-item>
+
+
+      <ion-item>
+        <p ion-text item-start color="primary">Village</p>
+        <p item-end>{{student.VillageName}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <p ion-text item-start color="primary">School</p>
+        <p item-end>{{student.SchoolName}}</p>
+      </ion-item>
+
+      <ion-item>
+        <p ion-text item-start color="primary">ANM</p>
+        <p item-end>{{student.ANMName}}</p>
+      </ion-item>
+
+      <ion-item>
+        <p ion-text item-start color="primary">Entry Date</p>
+        <p item-end>{{student.EntryDate | date : 'mediumDate'}}</p>
+      </ion-item>
+
+      <ion-item>
+        <p ion-text item-start color="primary">Follow Up Date</p>
+        <p item-end>{{student.FollowUpDate | date : 'mediumDate'}}</p>
+      </ion-item>
+
+      
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+</ion-row>
+</ion-grid>
+</ion-content>

@@ -1,216 +1,224 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{pgName}}</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-
-  <ion-grid class="whiteBg">
-    <ion-row>
-
-      <ion-col col-2>
-        <ion-item no-lines>
-          <ion-label stacked>Mandals</ion-label>
-          <ion-select class="darkBg" [(ngModel)]="mandalSel" (ionChange)="checkMandal()">
-            <ion-option value="all">All</ion-option>
-            <ion-option *ngFor="let m of mandals" [value]="m.key">{{m.Name}}</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-
-      <ion-col col-2>
-        <ion-item no-lines>
-          <ion-label stacked>Villages</ion-label>
-          <ion-select class="darkBg" [(ngModel)]="villageSel" (ionChange)="checkVillage()" >
-            <ion-option value="all">All</ion-option>
-            <ion-option *ngFor="let v of villages" [value]="v.key">{{v.Name}}</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-      <ion-col col-2>
-        <ion-item no-lines>
-          <ion-label stacked>Schools</ion-label>
-          <ion-select class="darkBg" [(ngModel)]="schoolSel">
-            <ion-option value="all">All</ion-option>
-            <ion-option *ngFor="let s of schools" [value]="s.key">{{s.Name}}</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-
-
-
-
-      <ion-col col-2>
-        <ion-item no-lines>
-          <ion-label stacked>Community</ion-label>
-          <ion-select [(ngModel)]="casteSel" class="darkBg" (ionChange)="filterExact('Community',casteSel)">
-            <ion-option value="all">All</ion-option>
-            <ion-option value="SC">SC</ion-option>
-            <ion-option value="ST">ST</ion-option>
-            <ion-option value="BC">BC</ion-option>
-            <ion-option value="OC">OC</ion-option>
-            <ion-option value="Minority">Minority</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-      <ion-col col-1>
-        <ion-item no-lines>
-          <ion-label stacked>Age</ion-label>
-          <ion-select class="darkBg" [(ngModel)]="age" (ionChange)="filterExact('Age',age)">
-            <ion-option value="all">All</ion-option>
-            <ion-option value="10">10</ion-option>
-            <ion-option value="11">11</ion-option>
-            <ion-option value="12">12</ion-option>
-            <ion-option value="13">13</ion-option>
-            <ion-option value="14">14</ion-option>
-            <ion-option value="15">15</ion-option>
-            <ion-option value="16">16</ion-option>
-            <ion-option value="17">17</ion-option>
-            <ion-option value="18">18</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-      <ion-col col-2>
-        <ion-item no-lines>
-          <ion-label stacked>Severity</ion-label>
-          <ion-select [(ngModel)]="anL" class="darkBg" (ionChange)="filterExact('Severity', this.anL)">
-            <ion-option value="all">All</ion-option>
-            <ion-option value="Severely Anaemic">Severely Anaemic</ion-option>
-            <ion-option value="Moderately Anaemic">Moderately Anaemic</ion-option>
-            <ion-option value="Mildly  Anaemic">Mildly Anaemic</ion-option>
-            <ion-option value="Healthy">Healthy</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-      <ion-col col-1>
-        <ion-item no-lines>
-          <ion-label stacked>Class</ion-label>
-          <ion-select class="darkBg" (ionChange)="filterExact('Class',clSel)" [(ngModel)]="clSel">
-            <ion-option value="all">All</ion-option>
-            <ion-option value="6">6th</ion-option>
-            <ion-option value="7">7th</ion-option>
-            <ion-option value="8">8th</ion-option>
-            <ion-option value="9">9th</ion-option>
-            <ion-option value="10">10th</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-
-    </ion-row>
-
-
-  </ion-grid>
-
-
-  <ion-grid>
     <ion-navbar color="primary">
+      <ion-buttons end>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <p ion-text color="whiter">{{adminName}} </p>
+      </ion-buttons>
+      <ion-title>{{pageName}} </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content class="darkBg">
+  
+    <ion-grid class="whiteBg">
       <ion-row>
-        <ion-col col-1></ion-col>
-        <ion-col col-1>
-          <p class="headBar">Name</p>
+  
+        <ion-col col-2>
+          <ion-item no-lines >
+            <ion-label stacked>Mandals</ion-label>
+            <ion-select class="darkBg" [(ngModel)]="mandalSel" (ionChange)="checkMandal()">
+              <ion-option value="all">All</ion-option>
+              <ion-option *ngFor="let m of mandals" [value]="m.key">{{m.Name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+  
+        <ion-col col-2>
+          <ion-item no-lines>
+            <ion-label stacked>Villages</ion-label>
+            <ion-select class="darkBg" [(ngModel)]="villageSel" (ionChange)="checkVillage()" >
+              <ion-option value="all">All</ion-option>
+              <ion-option *ngFor="let v of villages" [value]="v.key">{{v.Name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <ion-item no-lines>
+            <ion-label stacked>Schools</ion-label>
+            <ion-select class="darkBg" [(ngModel)]="schoolSel" (ionChange)="checkSchool()" >
+              <ion-option value="all">All</ion-option>
+              <ion-option *ngFor="let s of schools" [value]="s.key">{{s.Name}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+  
+  
+  
+  
+        <ion-col col-2>
+          <ion-item no-lines>
+            <ion-label stacked>Community</ion-label>
+            <ion-select [(ngModel)]="casteSel" class="darkBg" (ionChange)="filterExact('Community',casteSel)">
+              <ion-option value="all">All</ion-option>
+              <ion-option value="SC">SC</ion-option>
+              <ion-option value="ST">ST</ion-option>
+              <ion-option value="BC">BC</ion-option>
+              <ion-option value="OC">OC</ion-option>
+              <ion-option value="Minority">Minority</ion-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
         <ion-col col-1>
-          <p class="headBar">Age</p>
+          <ion-item no-lines>
+            <ion-label stacked>Age</ion-label>
+            <ion-select class="darkBg" [(ngModel)]="age" (ionChange)="filterExact('Age',age)">
+              <ion-option value="all">All</ion-option>
+              <ion-option value="10">10</ion-option>
+              <ion-option value="11">11</ion-option>
+              <ion-option value="12">12</ion-option>
+              <ion-option value="13">13</ion-option>
+              <ion-option value="14">14</ion-option>
+              <ion-option value="15">15</ion-option>
+              <ion-option value="16">16</ion-option>
+              <ion-option value="17">17</ion-option>
+              <ion-option value="18">18</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <ion-item no-lines>
+            <ion-label stacked>Severity</ion-label>
+            <ion-select [(ngModel)]="anL" class="darkBg" (ionChange)="filterExact('Severity', this.anL)">
+              <ion-option value="all">All</ion-option>
+              <ion-option value="Severely Anaemic">Severely Anaemic</ion-option>
+              <ion-option value="Moderately Anaemic">Moderately Anaemic</ion-option>
+              <ion-option value="Mildly  Anaemic">Mildly Anaemic</ion-option>
+              <ion-option value="Healthy">Healthy</ion-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
         <ion-col col-1>
-          <p class="headBar">Class</p>
+          <ion-item no-lines>
+            <ion-label stacked>Class</ion-label>
+            <ion-select class="darkBg" (ionChange)="filterExact('Class',clSel)" [(ngModel)]="clSel">
+              <ion-option value="all">All</ion-option>
+              <ion-option value="6">6th</ion-option>
+              <ion-option value="7">7th</ion-option>
+              <ion-option value="8">8th</ion-option>
+              <ion-option value="9">9th</ion-option>
+              <ion-option value="10">10th</ion-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
-        <ion-col col-1>
-          <p class="headBar">School</p>
+  
+      </ion-row>
+  
+  
+    </ion-grid>
+  
+  
+  
+    <ion-grid>
+      <ion-navbar color="primary">
+        <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Name</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Age</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Community</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Class</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">School</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Village</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Mandal</p>
+          </ion-col>
+          <ion-col col-1 no-padding >
+            <p class="headBar">Severity</p>
+          </ion-col>
+                  <ion-col col-1 no-padding >
+            <p class="headBar">Phone</p>
+          </ion-col>
+  
+          <ion-col col-1 no-padding>
+            <p class="headBar">ANM</p>
+          </ion-col>
+          <ion-col col-1 no-padding>
+            <p class="headBar">Actions</p>
+          </ion-col>
+        </ion-row>
+      </ion-navbar>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-searchbar item-end animated="true" placeholder="Search a Student .." [(ngModel)]="searchbar" ></ion-searchbar>
         </ion-col>
-        <ion-col col-1>
-          <p class="headBar">Village</p>
-        </ion-col>
-        <ion-col col-1>
-          <p class="headBar">Mandal</p>
-        </ion-col>
-        <ion-col col-1>
-          <p class="headBar">Severity</p>
-        </ion-col>
-        <ion-col col-1>
-          <p class="headBar">HBl</p>
-        </ion-col>
-                <ion-col col-1>
-          <p class="headBar">Phone</p>
-        </ion-col>
-
-        <ion-col col-1>
-          <p class="headBar">ANM</p>
+        <ion-col col-6>
+          <button ion-button float-right (click)="exporti()">
+            Export
+            <ion-icon padding-left name="share-alt"></ion-icon>
+          </button>
         </ion-col>
       </ion-row>
-    </ion-navbar>
-  </ion-grid>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6>
-        <ion-searchbar item-end animated="true" placeholder="Search a Student .." [(ngModel)]="searchbar" ></ion-searchbar>
-      </ion-col>
-      <ion-col col-6>
-        <button ion-button float-right (click)="exporti()">
-          Export
-          <ion-icon padding-left name="share-alt"></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-grid>
-
-  <ion-grid>
-    <ion-card *ngFor="let a of filteredStudents;let i = index" [color]="a.colori" >
-      <ion-card-content>
-        <ion-row>
-          <ion-col col-1>
-            <ion-checkbox [(ngModel)]="a.Checked" (ionChange)="addToArr(a)"></ion-checkbox>
-            <p ion-text><strong>{{i+1}}</strong></p>
-          </ion-col>
-          <ion-col col-1  (click)="gtStudentDetails(a)" class="curs">
-            {{a.StudentName}}
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.Age }}</h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.Class}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.SchoolName}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.VillageName}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.MandalName}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.Severity}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.HBL}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.Mobile}} </h2><br />
-          </ion-col>
-          <ion-col col-1 >
-            <h2  >{{a.ANMName}} </h2><br />
-          </ion-col>
-
-
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-  </ion-grid>
-
-
-  <ion-fab right bottom *ngIf="selArray.length">
-    <button ion-fab color="danger" (click)="delMulC()">
-      <ion-icon name="md-trash"></ion-icon>
-    </button>
-  </ion-fab>
-
-
-
-</ion-content>
+  
+    </ion-grid>
+  
+    <ion-grid>
+      <ion-card *ngFor="let a of filteredStudents;let i = index" [color]="a.colori" >
+        <ion-card-content>
+          <ion-row>
+            <ion-col col-1>
+              <ion-checkbox [(ngModel)]="a.Checked" (ionChange)="addToArr(a)"></ion-checkbox>
+              <p ion-text><strong>{{i+1}}</strong></p>
+            </ion-col>
+            <ion-col col-1  (click)="gtStudentDetails(a)" class="curs">
+              {{a.StudentName}}
+            </ion-col>
+            <ion-col col-1 >
+              <h2  >{{a.Age }}</h2><br />
+            </ion-col>
+            <ion-col col-1 >
+              <h2  >{{a.Community }}</h2><br />
+            </ion-col>
+            <ion-col col-1 >
+              <h2  >{{a.Class}} </h2><br />
+            </ion-col>
+            <ion-col col-1 (click)="gtSchoolDetails(a)" class="curs" >
+              <h2  >{{a.SchoolName}} </h2><br />
+            </ion-col>
+            <ion-col col-1 (click)="gtVillageDetails(a)" class="curs" >
+              <h2  >{{a.VillageName}} </h2><br />
+            </ion-col>
+            <ion-col col-1 (click)="gtMandalDetails(a)" class="curs" >
+              <h2  >{{a.MandalName}} </h2><br />
+            </ion-col>
+            <ion-col col-1 >
+              <h2  >{{a.Severity}} </h2><br />
+            </ion-col>
+            <ion-col col-1 >
+              <h2  >{{a.Mobile}} </h2><br />
+            </ion-col>
+            <ion-col col-1 (click)="gtANMDetails(a)" class="curs" >
+              <h2  >{{a.ANMName}} </h2><br />
+            </ion-col>
+            <ion-col col-1 >
+              <button ion-button (click)="editStudent(a)" text-center>
+                <ion-icon name="md-create"></ion-icon>
+              </button>
+            </ion-col>
+  
+  
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+    <ion-fab right bottom *ngIf="selArray.length">
+      <button ion-fab color="danger" (click)="delMulC()">
+        <ion-icon name="md-trash"></ion-icon>
+      </button>
+    </ion-fab>
+  
+  
+  </ion-content>

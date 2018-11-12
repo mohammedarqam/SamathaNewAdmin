@@ -5,10 +5,10 @@ webpackJsonp([12],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditAnmPageModule", function() { return EditAnmPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DelAnmPageModule", function() { return DelAnmPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_anm__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__del_anm__ = __webpack_require__(187);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EditAnmPageModule = /** @class */ (function () {
-    function EditAnmPageModule() {
+var DelAnmPageModule = /** @class */ (function () {
+    function DelAnmPageModule() {
     }
-    EditAnmPageModule = __decorate([
+    DelAnmPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__edit_anm__["a" /* EditAnmPage */],
+                __WEBPACK_IMPORTED_MODULE_2__del_anm__["a" /* DelAnmPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__edit_anm__["a" /* EditAnmPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__del_anm__["a" /* DelAnmPage */]),
             ],
         })
-    ], EditAnmPageModule);
-    return EditAnmPageModule;
+    ], DelAnmPageModule);
+    return DelAnmPageModule;
 }());
 
-//# sourceMappingURL=edit-anm.module.js.map
+//# sourceMappingURL=del-anm.module.js.map
 
 /***/ })
 

@@ -25,9 +25,8 @@
           <ion-card-content>
             <ion-card-title color="primary">Current Schools</ion-card-title>
             <ion-item *ngFor="let j of assignedJobs" >
-              <p item-start>{{j.SchoolName}} </p>
+              <p item-start class="curs" (click)="gtSchoolDetails(j)" >{{j.SchoolName}} </p>
               <ion-buttons end>
-                <button ion-button clear (click)="gtSchoolDetails(j)">Details</button>
                 <button ion-button color="danger" clear (click)="removeSchoolC(j)">Remove</button>
               </ion-buttons>
             </ion-item>

@@ -5,10 +5,10 @@ webpackJsonp([14],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AssignSchoolPageModule", function() { return AssignSchoolPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnmDetailsPageModule", function() { return AnmDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__assign_school__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__anm_details__ = __webpack_require__(65);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AssignSchoolPageModule = /** @class */ (function () {
-    function AssignSchoolPageModule() {
+var AnmDetailsPageModule = /** @class */ (function () {
+    function AnmDetailsPageModule() {
     }
-    AssignSchoolPageModule = __decorate([
+    AnmDetailsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__assign_school__["a" /* AssignSchoolPage */],
+                __WEBPACK_IMPORTED_MODULE_2__anm_details__["a" /* AnmDetailsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__assign_school__["a" /* AssignSchoolPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__anm_details__["a" /* AnmDetailsPage */]),
             ],
         })
-    ], AssignSchoolPageModule);
-    return AssignSchoolPageModule;
+    ], AnmDetailsPageModule);
+    return AnmDetailsPageModule;
 }());
 
-//# sourceMappingURL=assign-school.module.js.map
+//# sourceMappingURL=anm-details.module.js.map
 
 /***/ })
 

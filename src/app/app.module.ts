@@ -29,6 +29,7 @@ import { EditAnmPage } from '../pages/Subs/Anms/edit-anm/edit-anm';
 import {File} from '@ionic-native/file';
 import { DataUploadPage } from '../pages/data-upload/data-upload';
 import { DeleteStudentsPage } from '../pages/Students/delete-students/delete-students';
+import { EditStudentPage } from '../pages/Students/edit-student/edit-student';
 
 
 export const firebaseCred = {
@@ -68,6 +69,7 @@ firebase.initializeApp(firebaseCred);
     EditAnmPage,
     DataUploadPage,
     DeleteStudentsPage,
+    EditStudentPage,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +103,7 @@ firebase.initializeApp(firebaseCred);
     EditAnmPage,
     DataUploadPage,
     DeleteStudentsPage,
-
+    EditStudentPage,
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

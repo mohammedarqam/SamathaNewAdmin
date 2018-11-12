@@ -5,10 +5,10 @@ webpackJsonp([8],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewMandalsPageModule", function() { return ViewMandalsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MandalDetailsPageModule", function() { return MandalDetailsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view_mandals__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mandal_details__ = __webpack_require__(88);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ViewMandalsPageModule = /** @class */ (function () {
-    function ViewMandalsPageModule() {
+var MandalDetailsPageModule = /** @class */ (function () {
+    function MandalDetailsPageModule() {
     }
-    ViewMandalsPageModule = __decorate([
+    MandalDetailsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__view_mandals__["a" /* ViewMandalsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__mandal_details__["a" /* MandalDetailsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__view_mandals__["a" /* ViewMandalsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__mandal_details__["a" /* MandalDetailsPage */]),
             ],
         })
-    ], ViewMandalsPageModule);
-    return ViewMandalsPageModule;
+    ], MandalDetailsPageModule);
+    return MandalDetailsPageModule;
 }());
 
-//# sourceMappingURL=view-mandals.module.js.map
+//# sourceMappingURL=mandal-details.module.js.map
 
 /***/ })
 

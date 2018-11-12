@@ -9,8 +9,6 @@ import { ViewVillagesPage } from '../pages/Subs/Villages/view-villages/view-vill
 import { ViewSchoolsPage } from '../pages/Subs/Schools/view-schools/view-schools';
 import { StudentsPage } from '../pages/Students/students/students';
 import { ViewAmnsPage } from '../pages/Subs/Anms/view-amns/view-amns';
-import { MandalDetailsPage } from '../pages/Subs/Mandals/mandal-details/mandal-details';
-import { DataUploadPage } from '../pages/data-upload/data-upload';
 @Component({
   templateUrl: 'app.html'
 })
@@ -48,21 +46,21 @@ export class MyApp {
   initializeApp() {
     this.platform.ready().then(() => {
       firebase.auth().onAuthStateChanged((user) => {
-    //     if (user) {
-    //     firebase.database().ref("Admin Data").child("Admins").child(user.uid).once('value',itemSnap=>{
-    //         if(itemSnap.exists()){
-    //           this.rootPage = DashboardPage;
-    //         }else{
-    //           firebase.auth().signOut().then(()=>{
-    //             this.rootPage = LoginPage;
-    //             this.presentToast("You are not registered a Admin")
-    //           })
-    //         }
-    // });
-    //   }
-    //   else{
-    //     this.rootPage = LoginPage;
-    //   }
+        if (user) {
+        firebase.database().ref("Admin Data").child("Admins").child(user.uid).once('value',itemSnap=>{
+            if(itemSnap.exists()){
+              this.rootPage = DashboardPage;
+            }else{
+              firebase.auth().signOut().then(()=>{
+                this.rootPage = LoginPage;
+                this.presentToast("You are not registered a Admin")
+              })
+            }
+    });
+      }
+      else{
+        this.rootPage = LoginPage;
+      }
     });  
      });
   }
