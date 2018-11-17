@@ -12,7 +12,6 @@ import { VillageDetailsPage } from '../../Subs/Villages/village-details/village-
 import { AnmDetailsPage } from '../../Subs/Anms/anm-details/anm-details';
 import { DeleteStudentsPage } from '../../Students/delete-students/delete-students';
 import { EditStudentPage } from '../../Students/edit-student/edit-student';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @IonicPage()
 @Component({
@@ -38,7 +37,7 @@ export class DashboardPage {
   anL: string = "all";
   age: string = "all";
   clSel: string = 'all';
-
+  ProgressSel : string = 'all';
   totAnms: number = 0;
   filters = {}
   selArray: Array<any> = [];
@@ -85,6 +84,7 @@ export class DashboardPage {
           let temp: any = snip.payload.val();
           temp.key = snip.key;
           this.students.push(temp)
+          console.log(temp)
         })
 
         this.applyFilters()
@@ -146,24 +146,7 @@ export class DashboardPage {
 
   }
 
-  addToArr(a) {
-    switch (a.Checked) {
-      case true: this.selArray.push(a.key);
-        break;
-      case false: this.rmFrmArray(a.key);
-        break;
-    }
 
-  }
-
-  rmFrmArray(key) {
-    var ind = this.selArray.indexOf(key);
-    this.selArray.splice(ind, 1)
-  }
-  delMulC() {
-    let partnerView = this.modalCtrl.create(DeleteStudentsPage, { delAnms: this.selArray }, { enableBackdropDismiss: false });
-    partnerView.present();
-  }
 
 
   /// filter property by equality to rule

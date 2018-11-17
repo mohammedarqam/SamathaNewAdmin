@@ -18,7 +18,7 @@ export class MyApp {
   rootPage: any = DashboardPage;
   activePage: any;
 
-  full : boolean = true;
+  full : boolean = false;
 
   pages: Array<{ title: string, component: any, icon: any, color : string }>;
 
