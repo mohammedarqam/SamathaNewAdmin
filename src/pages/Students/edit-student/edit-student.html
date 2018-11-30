@@ -37,7 +37,7 @@
         </ion-item>
       </ion-row>
         <ion-item>
-        <ion-label floating>HBL</ion-label>
+        <ion-label floating>HBL %</ion-label>
         <ion-input type="number" [(ngModel)]="student.HBL" (ionChange)="getSev()" ></ion-input>
       </ion-item>
 
@@ -45,6 +45,17 @@
         <ion-label floating>Age</ion-label>
         <ion-input type="number" [(ngModel)]="student.Age"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label >Date of Birth </ion-label>
+        <ion-datetime displayFormat="DD/MMM/YYYY" (ionChange)="calcAge()" [(ngModel)]="student.DOB"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <p item-start ion-text color="primary">Age</p>
+        <p item-end>{{student.Age}}</p>
+      </ion-item>
+      
       <ion-item>
         <ion-label floating>Class</ion-label>
         <ion-input type="number" [(ngModel)]="student.Class"></ion-input>

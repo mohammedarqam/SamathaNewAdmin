@@ -17,5 +17,9 @@ page-view-schools {
         font-weight: 500;
         margin: 0;
     }
-    
+    .wrpBrk{
+        overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+    }    
 }

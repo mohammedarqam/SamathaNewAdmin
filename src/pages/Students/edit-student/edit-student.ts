@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import * as firebase from 'firebase';
+import moment from 'moment';
+
 
 @IonicPage()
 @Component({
@@ -82,7 +84,9 @@ export class EditStudentPage {
     });
     toast.present();
   }
-
+  calcAge() {
+    this.student.Age = moment().diff(this.student.DOB, 'years', false);
+  }
   enterData() {
     let kk = this.student.key;
     let loading = this.loadingCtrl.create({

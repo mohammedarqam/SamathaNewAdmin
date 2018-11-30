@@ -43733,6 +43733,14 @@ page-view-schools .headBar1 {
   margin: 0;
 }
 
+page-view-schools .wrpBrk {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 page-add-villages ion-select, page-add-villages ion-input {
   border-bottom: 1px solid #E51A4B;
 }

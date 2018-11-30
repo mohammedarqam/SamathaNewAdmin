@@ -14,7 +14,7 @@
 
   <ion-card >
     <ion-card-content>
-      <h2>Are you sure you want to delete these ANMs ?</h2>
+      <h2>Are you sure you want to delete these <span style="font-size : 24px;" ion-text color="primary" >{{anms.length}}</span> ANMs ?</h2>
       <ion-item *ngFor="let a of anms">
           {{a.Name}}
       </ion-item>
