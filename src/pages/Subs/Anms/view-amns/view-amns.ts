@@ -51,7 +51,6 @@ export class ViewAmnsPage {
             sklsArr.push(tempo);
           })
           temp.Schools = sklsArr;
-          console.log(temp)
         })
         tempArray.push(temp);
       })

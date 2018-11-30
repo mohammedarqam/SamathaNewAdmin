@@ -14,10 +14,14 @@
       <ion-col col-6>
         <ion-card>
           <ion-card-content>
-            <!-- <button ion-button float-right clear icon-only (click)="editAnmDetails()">
-              <ion-icon name="md-create"></ion-icon>
-            </button> -->
-            <ion-card-title>{{anmP.Name}}</ion-card-title>
+
+            <ion-item>
+              <ion-card-title>{{anmP.Name}}</ion-card-title>
+              <button ion-button item-end clear icon-only (click)="editAnmDetails()">
+                Edit
+              </button>
+
+            </ion-item>
             <ion-item>
               <p ion-text item-start color="primary">Phone Number</p>
               <p item-end>{{anmP.Phone}}</p>
@@ -28,7 +32,7 @@
             </ion-item>
             <ion-item>
               <p ion-text item-start color="primary">Email</p>
-              <p item-end *ngIf="anmP.Email" >{{anmP.Email}}</p>
+              <p item-end *ngIf="anmP.Email">{{anmP.Email}}</p>
               <p item-end *ngIf="!anmP.Email">No Email Provided</p>
             </ion-item>
             <ion-item>

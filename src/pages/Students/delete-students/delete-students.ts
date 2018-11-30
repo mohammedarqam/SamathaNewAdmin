@@ -37,7 +37,7 @@ export class DeleteStudentsPage {
   }
 
 
-  deleteAnms(){
+  deleteStudents(){
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
