@@ -151,8 +151,46 @@
 
   </ion-grid>
 
+  <button ion-button float-right *ngIf="!showChar" (click)="togCharts()">Show Charts</button>
+  <button ion-button float-right *ngIf="showChar" (click)="togCharts()">Show Numbers</button>
 
-  <ion-grid>
+  <ion-grid *ngIf="showChar">
+    <ion-row>
+      <ion-col col-3 margin-horizontal push-1>
+        <h1 padding-left>Total Students Screened</h1>
+        <ion-card>
+          <ion-card-content>
+            <ion-row>
+              <ion-col class="br1 br4" col-12>
+                <p class="nums">{{filteredStudents.length}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-3 margin-horizontal push-1>
+        <h1 padding-left> Anaemia Level</h1>
+        <ion-card>
+          <ion-card-content>
+            <canvas #barCanvas1></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-3 margin-horizontal push-1>
+        <h1 padding-left>Community</h1>
+        <ion-card>
+          <ion-card-content>
+            <canvas #barCanvas2></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid *ngIf="!showChar">
     <ion-row>
       <ion-col col-3 margin-horizontal push-1>
         <h1 padding-left>Total Students Screened</h1>
