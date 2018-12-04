@@ -404,7 +404,7 @@ export class DashboardPage {
     })
   }
   exporti() {
-    let newArea = this.students;
+    let newArea = this.filteredStudents;
     newArea.forEach(snip => {
       delete snip.key;
       delete snip.ANM;
