@@ -173,7 +173,17 @@
         <h1 padding-left> Anaemia Level</h1>
         <ion-card>
           <ion-card-content>
-            <canvas #barCanvas1></canvas>
+            <div style="display: block">
+              <canvas baseChart 
+              [datasets]="barChartData1" 
+              [labels]="barChartLabels1" 
+              [options]="barChartOptions"
+              [legend]="barChartLegend" 
+              [chartType]="barChartType" 
+              (chartHover)="chartHovered($event)" 
+              (chartClick)="chartClicked($event)">
+            </canvas>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -182,7 +192,17 @@
         <h1 padding-left>Community</h1>
         <ion-card>
           <ion-card-content>
-            <canvas #barCanvas2></canvas>
+            <div style="display: block">
+              <canvas baseChart 
+              [datasets]="barChartData2" 
+              [labels]="barChartLabels2" 
+              [options]="barChartOptions"
+              [legend]="barChartLegend" 
+              [chartType]="barChartType" 
+              (chartHover)="chartHovered($event)" 
+              (chartClick)="chartClicked($event)">
+            </canvas>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-col>

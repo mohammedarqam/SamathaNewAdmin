@@ -19,13 +19,9 @@ import { Chart } from 'chart.js';
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
-  @ViewChild('barCanvas1') barCanvas1;
-  @ViewChild('barCanvas2') barCanvas2;
  
-  barChart1: any;
-  barChart2: any;
 
-  showChar : boolean = true;
+  showChar : boolean = false;
 
   pageName = "Dashboard";
   districtSel = "Wanaparthy";
@@ -65,6 +61,33 @@ export class DashboardPage {
   primaryStudents = this.db.list('Organisms/Students', ref => ref.orderByChild("StudentName"));
   primaryVillages = this.db.list("Subs/Villages", ref => ref.orderByChild("Name"))
 
+
+  public barChartOptions:any = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels1:string[] = ['Severely', 'Moderately', 'Mildly', 'Healthy'];
+  public barChartLabels2:string[] = [ 'SC', 'ST', 'BC', 'OC', 'Minority'];
+  public barChartType:string = 'bar';
+  public barChartLegend:boolean = false;
+  
+  public barChartData1:any[] = [
+    {data: [0, 0, 0, 0], label: 'Severity'},
+  ];
+  public barChartData2:any[] = [
+    {data: [0, 0, 0, 0, 0], label: 'Community'},
+  ];
+
+  // events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+  
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+
+
   constructor(
     public navCtrl: NavController,
     private db: AngularFireDatabase,
@@ -83,86 +106,6 @@ export class DashboardPage {
     
   }
 
-  loadCharts(){
-    this.barChart1 = new Chart(this.barCanvas1.nativeElement, {
-
-      type: 'bar',
-      data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
-
-  });
-
-    this.barChart2 = new Chart(this.barCanvas2.nativeElement, {
-
-        type: 'bar',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
-
-    });
-
-  }
 
   getStudents(){
     let loading = this.loadingCtrl.create({
@@ -175,9 +118,7 @@ export class DashboardPage {
           let temp: any = snip.payload.val();
           temp.key = snip.key;
           this.students.push(temp)
-          console.log(temp)
         })
-
         this.applyFilters()
       })
     this.getMandals();
@@ -192,6 +133,7 @@ export class DashboardPage {
     });
 
     this.filteredStudents = _.filter(this.students, _.conforms(this.filters))
+    
     this.allNumsZero();
     this.filteredStudents.forEach(temp => {
       switch (temp.Severity) {
@@ -216,6 +158,15 @@ export class DashboardPage {
         case "Minority": this.totMin = this.totMin + 1;
           break;
       }
+      let data1 = [this.totSev,this.totMod,this.totMild,this.totHeal];
+      let clone1 = JSON.parse(JSON.stringify(this.barChartData1));
+      clone1[0].data = data1;
+      this.barChartData1 = clone1;
+
+      let data2 = [this.totSC,this.totST,this.totBC,this.totOC,this.totMin];
+      let clone2 = JSON.parse(JSON.stringify(this.barChartData2));
+      clone2[0].data = data2;
+      this.barChartData2 = clone2;
 
       firebase.database().ref("Subs/Schools").child(temp.Schools).once("value", s => {
         temp.SchoolName = s.val().Name;
@@ -237,7 +188,7 @@ export class DashboardPage {
 
   }
 
-
+  
 
 
   /// filter property by equality to rule
@@ -543,6 +494,5 @@ export class DashboardPage {
 
   togCharts(){
     this.showChar = !this.showChar;
-    this.loadCharts();
   }
 }
